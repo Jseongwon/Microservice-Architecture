@@ -1,4 +1,6 @@
+using Basket.Api.Data;
 using BuildingBlocks.Exceptions.Handler;
+using Microsoft.Extensions.Caching.Distributed;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,15 @@ builder.Services.AddMarten(opts =>
 }).UseLightweightSessions();
 
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();
+
+// Scrutor 사용 안했을 때
+//builder.Services.AddScoped<IBasketRepository>(provider =>
+//{
+//    var basketRepository = provider.GetRequiredService<BasketRepository>();
+//    return new CachedBasketRepository(basketRepository, provider.GetRequiredService<IDistributedCache>());
+//});
+
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 var app = builder.Build();
