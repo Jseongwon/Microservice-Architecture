@@ -1,4 +1,4 @@
-﻿namespace Ordering.Api.ValueObjects
+﻿namespace Ordering.Domain.ValueObjects
 {
     public record Address
     {

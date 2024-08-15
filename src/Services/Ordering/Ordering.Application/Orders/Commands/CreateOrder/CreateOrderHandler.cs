@@ -10,7 +10,7 @@
             //save to database
             //return result
 
-            var order = CreateOrderNewOrder(command.Order);
+            var order = CreateNewOrder(command.Order);
 
             dbContext.Orders.Add(order);
             await dbContext.SaveChangesAsync(cancellationToken);
@@ -18,7 +18,7 @@
             return new CreateOrderResult(order.Id.Value);
         }
 
-        private Order CreateOrderNewOrder(OrderDto orderDto)
+        private Order CreateNewOrder(OrderDto orderDto)
         {
             var shippingAddress = Address.Of(
                 orderDto.ShippingAddress.FirstName, 

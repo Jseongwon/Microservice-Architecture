@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ordering.Api.ValueObjects
+﻿namespace Ordering.Domain.ValueObjects
 {
     public record Payment
     {
