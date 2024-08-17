@@ -1,8 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Ordering.Api.Enums;
-using Ordering.Domain.Models;
-using Ordering.Domain.ValueObjects;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Ordering.Domain.Enums;
 
 namespace Ordering.Infrastructure.Data.Configurations
 {

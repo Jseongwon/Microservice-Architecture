@@ -1,4 +1,4 @@
-﻿using Ordering.Api.Enums;
+﻿using Ordering.Domain.Enums;
 
 namespace Ordering.Application.Dtos
 {
